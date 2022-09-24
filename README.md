@@ -4,9 +4,9 @@ Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 
 ## Alunos integrantes da equipe
 
-* Fabrício
+* Fabrício Frade Sousa
 * João Victor Temponi Daltro de Castro
-* Maurício
+* Maurício Fernandes Leite
 
 ## Professores responsáveis
 
