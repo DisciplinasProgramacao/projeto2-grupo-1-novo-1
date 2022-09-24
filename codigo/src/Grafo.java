@@ -67,9 +67,8 @@ public class Grafo {
             chegada.addAresta(origem);
             adicionou = true;
         }
-        
+    
         return adicionou;
-
     }
 
     public Vertice existeVertice(int idVertice){
@@ -121,20 +120,32 @@ public class Grafo {
 
     public Grafo subGrafo(Lista<Vertice> vertices){
         Grafo subgrafo = new Grafo("Subgrafo de "+this.nome);
-        
 
         return subgrafo;
     }
-    
-    public int tamanho(){
-        
 
-
-        return 0;
-    }
-
+    /**
+     * Calcula a ordem do grafo completo
+     * @return Retorna a ordem do grafo completo em inteiro
+     */
     public int ordem(){
         return this.vertices.size();
     }
+    
+    /**
+     * Calcula o tamanho do grafo completo
+     * @return Retorna o tamanho do grafo completo em inteiro
+     */
+    public int tamanho(){
+        
+        int ordem, tamanho;
+
+        ordem = ordem();
+        tamanho = ordem * ((ordem-1)/2);
+
+        return tamanho;
+    }
+
+    
 
 }
