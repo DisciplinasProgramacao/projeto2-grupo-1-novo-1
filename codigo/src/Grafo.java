@@ -25,7 +25,7 @@
 /** 
  * Classe básica para um Grafo simples
  */
-public class Grafo {
+abstract class Grafo {
     public final String nome;
     private ABB<Vertice> vertices;
 
@@ -37,44 +37,9 @@ public class Grafo {
         this.vertices = new ABB<>();
     }
 
-    public void carregar(String nomeArquivo){
-
-    }
-
-    public void salvar(String nomeArquivo){
-        
-    }
-    /**
-     * Adiciona, se possível, um vértice ao grafo. O vértice é auto-nomeado com o próximo id disponível.
-     */
-    public boolean addVertice(int id){
-        Vertice novo = new Vertice(id);
-        return this.vertices.add(id, novo);
-    }
-
-    /**
-     * Adiciona uma aresta entre dois vértices do grafo. 
-     * Não verifica se os vértices pertencem ao grafo.
-     * @param origem Vértice de origem
-     * @param destino Vértice de destino
-     */
-    public boolean addAresta(int origem, int destino){
-        boolean adicionou = false;
-        Vertice saida = this.existeVertice(origem);
-        Vertice chegada = this.existeVertice(destino);
-        if(saida!=null && chegada !=null){
-            saida.addAresta(destino);
-            chegada.addAresta(origem);
-            adicionou = true;
-        }
-    
-        return adicionou;
-    }
-
     public Vertice existeVertice(int idVertice){
         return this.vertices.find(idVertice);
     }
-
 
     /**
      * Verifica a existẽncia de uma possível aresta, retornando null quando a aresta não existe. Caso exista, retorna um objeto de aresta
@@ -119,7 +84,7 @@ public class Grafo {
     }
 
     public Grafo subGrafo(Lista<Vertice> vertices){
-        Grafo subgrafo = new Grafo("Subgrafo de "+this.nome);
+        Grafo subgrafo = new GrafoCompleto("Subgrafo de "+this.nome, this.vertices.size());
 
         return subgrafo;
     }
@@ -146,6 +111,11 @@ public class Grafo {
         return tamanho;
     }
 
-    
+    public boolean euleriano(){
+
+        if(ordem() > 0 && (ordem() % 2) == 1){
+            return true;
+        } else return false;
+    }
 
 }
