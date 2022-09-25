@@ -47,7 +47,7 @@ public class GrafoCompleto extends Grafo{
     }
 
   
-    @Override
+    //@Override
     public GrafoCompleto subgrafo(ABB<Vertice> vertices){
         if(vertices.size() <= ordem){
             return new GrafoCompleto(nome, vertices.size());
