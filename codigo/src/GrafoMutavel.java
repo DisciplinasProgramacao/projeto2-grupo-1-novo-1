@@ -1,9 +1,8 @@
 abstract class GrafoMutavel extends Grafo{
 
-    public static String nome = "Grafo Mutável";
     private ABB<Vertice> vertices;
 
-    public GrafoMutavel(){
+    public GrafoMutavel(String nome){
         super(nome);
     }
 
