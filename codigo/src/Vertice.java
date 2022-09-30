@@ -80,4 +80,12 @@ public class Vertice {
     public int getId() {
         return this.id;        
     }
+
+    @Override
+
+    public String toString() {
+        return String.valueOf(this.id);
+    }
+
+    
 }

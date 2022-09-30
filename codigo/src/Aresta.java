@@ -1,4 +1,4 @@
-/** 
+/**
  * MIT License
  *
  * Copyright(c) 2021 João Caram <caram@pucminas.br>
@@ -10,7 +10,8 @@
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
  *
- * The above copyright notice and this permission notice shall be included in all
+ * The above copyright notice and this permission notice shall be included in
+ * all
  * copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -30,10 +31,11 @@ public class Aresta {
 
     /**
      * Construtor para arestas com ou sem peso
+     * 
      * @param peso Peso da aresta
      * @param dest Vértice de destino
      */
-    public Aresta(int peso, int destino){
+    public Aresta(int peso, int destino) {
         this.peso = peso;
         this.destino = destino;
         this.visitada = false;
@@ -41,32 +43,41 @@ public class Aresta {
 
     /**
      * Método de acesso para o peso da aresta
+     * 
      * @return the peso
      */
     public int peso() {
         return this.peso;
     }
-   
+
     /**
      * Método de acesso para o destino da aresta
+     * 
      * @return the destino
      */
     public int destino() {
         return this.destino;
     }
 
-    public void visitar(){
+    public void visitar() {
         this.visitada = true;
     }
 
-    public void limparVisita(){
+    public void limparVisita() {
         this.visitada = false;
     }
 
-    public boolean visitada(){
+    public boolean visitada() {
         return this.visitada;
     }
 
-    
+    public void setPeso(int peso){
+        this.peso = peso;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(this.destino);
+    }
 
 }
