@@ -8,8 +8,6 @@ import java.util.Arrays;
 
 abstract class GrafoMutavel extends Grafo{
 
-    private ABB<Vertice> vertices;
-
     public GrafoMutavel(String nome){
         super(nome);
     }
@@ -133,19 +131,6 @@ abstract class GrafoMutavel extends Grafo{
             }
         }
     }  
-    public void ponderarArestas(int origem, int destino, int peso){
-    
-        Vertice verticesArray[] = new Vertice[this.ordem()];
-        verticesArray = this.vertices.allElements(verticesArray);
-        for (Vertice orig : verticesArray) {
-
-            for (Vertice dest : verticesArray) {
-                if (orig.existeAresta(dest.getId()) != null) {
-                Aresta ares = new Aresta(peso, dest.getId());
-                }
-            }
-        }
-    }
 
     public boolean delAresta(int origem, int destino){
         
