@@ -115,8 +115,12 @@ abstract class GrafoMutavel extends Grafo{
     }
 
     public boolean delAresta(int origem, int destino){
+
+        boolean removeu = false;
         
-        return false;
+        
+
+        return removeu;
     }
 
     public boolean delVertice(int idVertice){
