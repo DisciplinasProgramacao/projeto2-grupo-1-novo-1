@@ -27,7 +27,6 @@ abstract class GrafoMutavel extends Grafo{
             chegada.addAresta(origem);
             adicionou = true;
     }
-    
         return adicionou;
     }
 
@@ -127,6 +126,7 @@ abstract class GrafoMutavel extends Grafo{
         }
     }
 
+<<<<<<< HEAD
     /**
      * Cria grafo completo.
      * @param nome nome identificador do grafo.
@@ -150,6 +150,8 @@ abstract class GrafoMutavel extends Grafo{
         }
     }  
 
+=======
+>>>>>>> 3198f4950589ccadbbce21c32adfdc7c10c64636
     public boolean delAresta(int origem, int destino){
         
         return false;
