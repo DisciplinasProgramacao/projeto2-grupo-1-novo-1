@@ -1,16 +1,10 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 
 public class GrafoNaoPonderadoTest {
 
     @Test
-    public void TesteAdicionarVertice() {
-        
-    }
-
-    @Test
-    public void TesteConstruirGrafoMutavel() {
+    public void TesteCriarGrafoMutavel() {
 
         GrafoNaoPonderado grafoNPonderado = new GrafoNaoPonderado("Grafo N ponderado teste");
         grafoNPonderado.addVertice(10);
