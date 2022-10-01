@@ -88,4 +88,8 @@ public class Vertice {
     public boolean visitado(){
         return this.visitado;
     }
+
+    public int getId() {
+        return this.id;
+    }
 }
