@@ -126,32 +126,6 @@ abstract class GrafoMutavel extends Grafo{
         }
     }
 
-<<<<<<< HEAD
-    /**
-     * Cria grafo completo.
-     * @param nome nome identificador do grafo.
-     * @param ordem quantidade de vertices do grafo completo.
-     */
-
-    public void GrafoCompleto(String nome, int ordem){
-
-        this.vertices = new ABB<>();
-        for(int i=0; i<ordem; i++){
-            this.addVertice(i);
-        }
-        
-        Vertice verticesArray[] = new Vertice[ordem];
-        verticesArray = this.vertices.allElements(verticesArray);
-        for (Vertice orig : verticesArray) {
-
-            for (Vertice dest : verticesArray) {
-                this.addAresta(orig.getId(), dest.getId()); 
-            }
-        }
-    }  
-
-=======
->>>>>>> 3198f4950589ccadbbce21c32adfdc7c10c64636
     public boolean delAresta(int origem, int destino){
         
         return false;
