@@ -1,6 +1,7 @@
+import java.lang.reflect.Array;
+
 public class GrafoCompleto extends Grafo{
     private int ordem;
-    private ABB<Vertice> vertices;
     
     public GrafoCompleto(String nome, int ordem){
         super(nome);
@@ -46,12 +47,13 @@ public class GrafoCompleto extends Grafo{
         } else return false;
     }
 
-  
-    //@Override
-    public GrafoCompleto subgrafo(ABB<Vertice> vertices){
-        if(vertices.size() <= ordem){
-            return new GrafoCompleto(nome, vertices.size());
+    @Override
+    public GrafoCompleto subGrafo(Lista<Vertice> vertices){
+        Vertice verticesArray[] = new Vertice[ordem];
+        verticesArray = vertices.allElements(verticesArray);
+        //remover null ou contador de não null
+        if(verticesArray.length <= ordem && verticesArray.length > 0){
+            return new GrafoCompleto(nome, verticesArray.length);
         } else return null;
     }
-    
 }
