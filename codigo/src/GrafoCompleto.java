@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 
 public class GrafoCompleto extends Grafo{
     private int ordem;
