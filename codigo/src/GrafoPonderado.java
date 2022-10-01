@@ -3,7 +3,12 @@ public class GrafoPonderado extends GrafoMutavel{
     public GrafoPonderado(String nome) {
         super(nome);
     }
-
+    /**
+     * Adiciona aresta ponderada entre os vertices passados por parametro.
+     * @param origem vertice de origem da aresta.
+     * @param destino vertice de destino da aressta.
+     * @param peso valor de ponderação da aresta.
+     */
     public boolean addAresta(int origem, int destino, int peso){
 
         boolean adicionou = false;
@@ -16,6 +21,10 @@ public class GrafoPonderado extends GrafoMutavel{
         }
         return adicionou;
     }
+    /**
+     * Cria subgrafo com os vertices passados por parametro.
+     * @param vertices lista de vertices para criação do subgrafo.
+     */
 
     @Override
     public GrafoCompleto subGrafo(Lista<Vertice> vertices){

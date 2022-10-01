@@ -39,6 +39,14 @@ abstract class GrafoMutavel extends Grafo{
         return this.vertices.add(id, novo);
     }
 
+    /**
+     * Lê arquivo formato cvs no local passado por parametro e carrega os dados no grafo.
+     * Primeira linha do arquivo deve conter número de vertices e número de arestas.
+     * Segunda linha deve conter todos os vertices do grafo.
+     * Linhas seguintes devem ter os pares de vertices que tem arestas.
+     * @param nomeArquivo local do arquivo a ser carregado.
+     */
+
     public void carregar(String nomeArquivo) throws Exception {
 
         FileReader fr = new FileReader(nomeArquivo);
@@ -72,7 +80,11 @@ abstract class GrafoMutavel extends Grafo{
             ex.printStackTrace();
         }
     }
-
+    /**
+     * Salva grafo em arquivo formato cvs.
+     * Cria novo arquivo no local se não existir ou sobregrava se existir.
+     * @param nomeArquivo local do arquivo a ser salvo.
+     */
     public void salvar(String nomeArquivo) throws IOException {
         File arquivo = new File(nomeArquivo);
         try {
@@ -114,6 +126,12 @@ abstract class GrafoMutavel extends Grafo{
             ex.printStackTrace();
         }
     }
+
+    /**
+     * Cria grafo completo.
+     * @param nome nome identificador do grafo.
+     * @param ordem quantidade de vertices do grafo completo.
+     */
 
     public void GrafoCompleto(String nome, int ordem){
 
