@@ -5,7 +5,7 @@ public class GrafoCompletoTest {
     
 
     @Test
-    public void testarCriarGrafo(){
+    public void testarCriarSubgrafo(){
         GrafoCompleto grafoTeste = new GrafoCompleto("Teste", 6);
         Lista<Vertice> vertices = new Lista<>();
         for(int i=0; i<4; i++){

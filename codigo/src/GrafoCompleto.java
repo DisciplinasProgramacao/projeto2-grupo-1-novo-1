@@ -49,11 +49,16 @@ public class GrafoCompleto extends Grafo{
 
     @Override
     public GrafoCompleto subGrafo(Lista<Vertice> vertices){
-        Vertice verticesArray[] = new Vertice[ordem];
+        Vertice verticesArray[] = new Vertice[this.ordem];
         verticesArray = vertices.allElements(verticesArray);
-        //remover null ou contador de não null
-        if(verticesArray.length <= ordem && verticesArray.length > 0){
-            return new GrafoCompleto(nome, verticesArray.length);
+        int naoNull = 0;
+        for(int i = 0; i < this.ordem; i++){
+            if(verticesArray[i] != null){
+                naoNull++;
+            }
+        }
+        if(naoNull <= ordem && naoNull > 0){
+            return new GrafoCompleto("Subgrafo de " + this.nome, naoNull);
         } else return null;
     }
 }
