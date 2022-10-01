@@ -110,7 +110,10 @@ abstract class Grafo {
 
         return tamanho;
     }
-
+    /**
+     * Verifica de grafo é completo.
+     * @return Retorna true para grafo completo ou false para não completo.
+     */
     public boolean euleriano(){
 
         if(ordem() > 0 && (ordem() % 2) == 1){
