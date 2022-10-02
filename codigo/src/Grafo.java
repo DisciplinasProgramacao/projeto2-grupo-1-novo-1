@@ -101,7 +101,7 @@ abstract class Grafo {
      */
     public boolean completo(){
 
-        int grauTotal = 0, qtdArestas= 0, tamanho = 0, tamanhoComp = 0;
+        int tamanho = 0, tamanhoComp = 0;
         boolean resposta = false;
         int n = this.ordem();
 
