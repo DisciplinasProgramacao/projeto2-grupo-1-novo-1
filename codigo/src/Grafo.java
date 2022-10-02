@@ -37,12 +37,15 @@ abstract class Grafo {
         this.vertices = new ABB<>();
     }
 
+    /*
+     * Metodo para verificar existência de vertice
+     */
     public Vertice existeVertice(int idVertice){
         return this.vertices.find(idVertice);
     }
 
     /**
-     * Verifica a existẽncia de uma possível aresta, retornando null quando a aresta não existe. Caso exista, retorna um objeto de aresta
+     * Verifica a existência de uma possível aresta, retornando null quando a aresta não existe. Caso exista, retorna um objeto de aresta
      * @param verticeA Vértice a ser considerado como origem ou destino da aresta
      * @param verticeB Vértice a ser considerado como origem ou destino da aresta
      * @return Objeto de aresta caso exista uma aresta que ligue os dois vértices do parâmetro. Caso não exista, retorna null
