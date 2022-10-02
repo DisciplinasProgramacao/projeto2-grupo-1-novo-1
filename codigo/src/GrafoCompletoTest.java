@@ -8,7 +8,7 @@ public class GrafoCompletoTest {
     static GrafoCompleto grafoTeste;
 
     @Test
-    public void testarCriarSubgrafo(){
+    public void TestCriarSubgrafo(){
         
         grafoTeste = new GrafoCompleto("Teste", 6);
         Lista<Vertice> vertices = new Lista<>();
