@@ -2,6 +2,11 @@
 public class GrafoCompleto extends Grafo{
     private int ordem;
     
+    /**
+     * Construtor da classe GrafoCompleto, já preenchendo as arestas
+     * @param nome Parâmetro que informa nome do Grafo
+     * @param ordem Parâmetro que informa a ordem do Grafo
+     */
     public GrafoCompleto(String nome, int ordem){
         super(nome);
         this.ordem = ordem;
@@ -19,11 +24,17 @@ public class GrafoCompleto extends Grafo{
         }
     }
     
+    /**
+     * Override sempre retorna true
+     */
     @Override
     public boolean completo(){
         return true;
     }
     
+    /**
+     * Override verifica aresta grafo completo
+     */
     @Override
     public Aresta existeAresta(int verticeA, int verticeB){
         if(existeVertice(verticeA) != null && existeVertice(verticeB) != null){
@@ -32,6 +43,9 @@ public class GrafoCompleto extends Grafo{
         } else return null;
     }
     
+    /**
+     * Override verifica vertice grafo completo
+     */
     @Override
     public Vertice existeVertice(int idVertice){
         if(idVertice >= 0 && idVertice < ordem){
@@ -39,6 +53,9 @@ public class GrafoCompleto extends Grafo{
         } else return null;
     }
 
+    /**
+     * Override verifica se o grafo é euleriano
+     */
     @Override
     public boolean euleriano(){
         if(ordem > 0 && (ordem % 2) == 1){
@@ -46,6 +63,9 @@ public class GrafoCompleto extends Grafo{
         } else return false;
     }
 
+    /**
+     * Override para criar subgrafo completo
+     */
     @Override
     public GrafoCompleto subGrafo(Lista<Vertice> vertices){
         Vertice verticesArray[] = new Vertice[this.ordem];

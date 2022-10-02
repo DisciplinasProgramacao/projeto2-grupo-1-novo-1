@@ -4,6 +4,9 @@ public class GrafoNaoPonderado extends GrafoMutavel{
         super(nome);
     }
 
+    /*
+     * Override permite apenas arestas sem peso
+     */
     @Override
     public boolean addAresta(int origem, int destino){
         int peso = 0;
@@ -18,6 +21,10 @@ public class GrafoNaoPonderado extends GrafoMutavel{
         return adicionou;
     }
 
+
+    /*
+     * Override para subgrafo não ponderado
+     */
     @Override
     public GrafoNaoPonderado subGrafo(Lista<Vertice> vertices){
         Vertice verticesArray[] = new Vertice[ordem()];

@@ -126,12 +126,10 @@ abstract class GrafoMutavel extends Grafo{
         }
     }
 
+    /*
     public boolean delAresta(int origem, int destino){
 
         boolean removeu = false;
-        
-        
-
         return removeu;
     }
 
@@ -139,6 +137,5 @@ abstract class GrafoMutavel extends Grafo{
         
         return false;
     }
-
-    
+     */    
 }

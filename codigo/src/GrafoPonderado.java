@@ -27,6 +27,9 @@ public class GrafoPonderado extends GrafoMutavel{
         return adicionou;
     }
 
+    /**
+     * Override para carregar grafo ponderado no arquivo
+     */
     @Override
     public void carregar(String nomeArquivo) throws Exception {
 
@@ -63,12 +66,12 @@ public class GrafoPonderado extends GrafoMutavel{
     }
 
     /**
-     * Cria subgrafo com os vertices passados por parametro.
+     * Override para cria subgrafo ponderado com os vertices passados por parametro.
      * @param vertices lista de vertices para criação do subgrafo.
      */
     @Override
     public GrafoPonderado subGrafo(Lista<Vertice> vertices){
-        Vertice verticesArray[] = new Vertice[ordem()];
+        Vertice verticesArray[] = new Vertice[this.ordem()];
         verticesArray = vertices.allElements(verticesArray);
         int naoNull = 0;
         for(int i = 0; i < this.ordem(); i++){
@@ -76,7 +79,7 @@ public class GrafoPonderado extends GrafoMutavel{
                 naoNull++;
             }
         }
-        if(naoNull <= ordem() && naoNull > 0){
+        if(naoNull <= this.ordem() && naoNull > 0){
             return new GrafoPonderado("Subgrafo de " + this.nome);
         } else return null;
     }
