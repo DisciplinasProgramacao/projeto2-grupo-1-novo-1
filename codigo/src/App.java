@@ -1,5 +1,3 @@
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
@@ -84,9 +82,14 @@ public class App {
                 case "7":
 
                     System.out.println("PERMITIR A CRIAÇÃO DE ARESTAS PONDRADAS:\n");
+                    GrafoPonderado grafoponderado = new GrafoPonderado("grafoponderado");
 
-                    // int tam = grafo_01.tamanho();
-                    // System.out.println(tam);
+                    grafoponderado.addVertice(13);
+                    grafoponderado.addVertice(22);
+                    grafoponderado.addAresta(13, 22, 51);
+
+                    System.out.println(
+                            "O peso da aresta ponderada: " + grafoponderado.existeAresta(13, 22).peso() + "\n");
 
                     opcao = "";
 
