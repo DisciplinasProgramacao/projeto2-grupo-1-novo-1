@@ -1,3 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Arrays;
+
 public class GrafoPonderado extends GrafoMutavel{
 
     public GrafoPonderado(String nome) {
@@ -21,13 +26,48 @@ public class GrafoPonderado extends GrafoMutavel{
         }
         return adicionou;
     }
+
+    @Override
+    public void carregar(String nomeArquivo) throws Exception {
+
+        FileReader fr = new FileReader(nomeArquivo);
+        BufferedReader br = new BufferedReader(fr);
+
+        try {
+
+            String linha = br.readLine();
+            String[] verticesLidos = linha.split(",");
+
+            int qtdeArestas = Integer.parseInt(verticesLidos[1]);
+
+            linha = br.readLine();
+            String[] vetVertLidos = linha.split(",");
+            int[] vetVertLidosToInt = Arrays.stream(vetVertLidos).mapToInt(Integer::parseInt).toArray();
+
+            for (int v : vetVertLidosToInt) {
+                this.addVertice(v);
+            }
+
+            System.out.println("Arestas lidas : ");
+            for (int i = 0; i < qtdeArestas; i++) {
+                linha = br.readLine();
+                String[] arestasLidas = linha.split(",");
+                int[] arestasLidasToInt = Arrays.stream(arestasLidas).mapToInt(Integer::parseInt).toArray();
+                this.addAresta(arestasLidasToInt[0], arestasLidasToInt[1]);
+            }
+            br.close();
+            fr.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     /**
      * Cria subgrafo com os vertices passados por parametro.
      * @param vertices lista de vertices para criação do subgrafo.
      */
-
     @Override
-    public GrafoCompleto subGrafo(Lista<Vertice> vertices){
+    public GrafoPonderado subGrafo(Lista<Vertice> vertices){
         Vertice verticesArray[] = new Vertice[ordem()];
         verticesArray = vertices.allElements(verticesArray);
         int naoNull = 0;
@@ -37,7 +77,7 @@ public class GrafoPonderado extends GrafoMutavel{
             }
         }
         if(naoNull <= ordem() && naoNull > 0){
-            return new GrafoCompleto("Subgrafo de " + this.nome, naoNull);
+            return new GrafoPonderado("Subgrafo de " + this.nome);
         } else return null;
     }
 
