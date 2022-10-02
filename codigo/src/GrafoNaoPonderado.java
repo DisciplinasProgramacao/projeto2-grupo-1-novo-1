@@ -5,7 +5,21 @@ public class GrafoNaoPonderado extends GrafoMutavel{
     }
 
     @Override
-    public GrafoCompleto subGrafo(Lista<Vertice> vertices){
+    public boolean addAresta(int origem, int destino){
+        int peso = 0;
+        boolean adicionou = false;
+        Vertice saida = this.existeVertice(origem);
+        Vertice chegada = this.existeVertice(destino);
+        if(saida!=null && chegada !=null){
+            saida.addAresta(destino, peso);
+            chegada.addAresta(origem, peso);
+            adicionou = true;
+    }
+        return adicionou;
+    }
+
+    @Override
+    public GrafoNaoPonderado subGrafo(Lista<Vertice> vertices){
         Vertice verticesArray[] = new Vertice[ordem()];
         verticesArray = vertices.allElements(verticesArray);
         int naoNull = 0;
@@ -15,7 +29,7 @@ public class GrafoNaoPonderado extends GrafoMutavel{
             }
         }
         if(naoNull <= ordem() && naoNull > 0){
-            return new GrafoCompleto("Subgrafo de " + this.nome, naoNull);
+            return new GrafoNaoPonderado("Subgrafo de " + this.nome);
         } else return null;
     }
 }

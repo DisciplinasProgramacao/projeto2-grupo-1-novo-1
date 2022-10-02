@@ -113,7 +113,7 @@ abstract class GrafoMutavel extends Grafo{
 
                 for (Vertice dest : verticesArray) {
                     if (orig.existeAresta(dest.getId()) != null) {
-                        escritor.write(orig.toString() + "," + orig.existeAresta(dest.getId()).toString());
+                        escritor.write(orig.toString() + "," + orig.existeAresta(dest.getId()).toString() + "," + orig.existeAresta(dest.getId()).peso());
                         escritor.newLine();
                     }
                 }
