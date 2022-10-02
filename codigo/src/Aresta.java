@@ -67,6 +67,9 @@ public class Aresta {
         return this.visitada;
     }
 
-    
+    @Override
+    public String toString() {
+        return String.valueOf(this.destino);
+    }
 
 }
