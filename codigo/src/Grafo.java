@@ -60,17 +60,39 @@ abstract class Grafo {
             arestaBParaA = vertcB.existeAresta(verticeA);
             
             if(arestaAParaB.destino() > 0) {
-
                 return arestaAParaB;
             }
             if(arestaBParaA.destino() > 0) {
-
                 return arestaAParaB;
             }
-
         }
-
     return null;
+    }
+
+    /**
+     * Método para verificar a quantidade de arestas de um grafo.
+     * @return Retorna em inteiro a quantidade de arestas de um grafo
+     */
+    private int quantidadeArestas(){
+
+        int qtd = 0, grauTotal = 0;
+
+        Vertice verticesArray[] = new Vertice[this.ordem()];
+        verticesArray = this.vertices.allElements(verticesArray);
+
+        if (verticesArray[0].grau() % 2 == 0) {
+            for(int i = 0; i < this.ordem(); i++){
+                grauTotal = grauTotal + verticesArray[i].grau();
+            }    
+        }
+        else{
+            for(int i = 1; i < this.ordem(); i++){
+                grauTotal = grauTotal + verticesArray[i].grau();
+            }
+        }
+        qtd = (grauTotal / 2);
+
+        return qtd;
     }
     
     /**
@@ -78,47 +100,69 @@ abstract class Grafo {
      * @return TRUE para grafo completo, FALSE caso contrário
      */
     public boolean completo(){
-        boolean resposta = true;
-        
-    return resposta;
+
+        int grauTotal = 0, qtdArestas= 0, tamanho = 0, tamanhoComp = 0;
+        boolean resposta = false;
+        int n = this.ordem();
+
+        tamanho = (n + quantidadeArestas());
+        tamanhoComp = (n + (n * ((n-1)/2)));
+
+        if(tamanhoComp == tamanho){
+            resposta = true;
+        }
+        return resposta;
     }
 
+    /**
+     * Método para gerar subgrafo
+     * @param vertices Lista de vértices que irão compor subgrafo
+     * @return Retorna um subgrafo
+     */
     public Grafo subGrafo(Lista<Vertice> vertices){
-        Grafo subgrafo = new GrafoCompleto("Subgrafo de "+this.nome, this.vertices.size());
 
+        Grafo subgrafo = new GrafoCompleto("Subgrafo de "+this.nome, this.vertices.size());
         return subgrafo;
     }
 
     /**
-     * Calcula a ordem do grafo completo
-     * @return Retorna a ordem do grafo completo em inteiro
+     * Calcula a ordem do grafo 
+     * @return Retorna a ordem do grafo em inteiro
      */
     public int ordem(){
         return this.vertices.size();
     }
     
     /**
-     * Calcula o tamanho do grafo completo
-     * @return Retorna o tamanho do grafo completo em inteiro
+     * Calcula o tamanho do grafo, sendo completo ou não
+     * @return Retorna o tamanho do grafo em inteiro
      */
     public int tamanho(){
         
-        int ordem, tamanho;
-
+        int tamanho, ordem;
         ordem = ordem();
-        tamanho = ordem * ((ordem-1)/2);
 
+        if(completo()){
+            tamanho = (ordem + (ordem * ((ordem - 1)/2)));
+        }
+        else{
+            tamanho = ordem + quantidadeArestas();
+        }
         return tamanho;
     }
+
     /**
-     * Verifica de grafo é completo.
-     * @return Retorna true para grafo completo ou false para não completo.
+     * Método para verificar se o grafo é euleriano
+     * @return Retorna TRUE caso o grafo seja euleriano, FALSE caso não seja
      */
     public boolean euleriano(){
 
         if(ordem() > 0 && (ordem() % 2) == 1){
             return true;
-        } else return false;
+        } 
+        else {
+            return false;
+        }
     }
 
 }
