@@ -2,14 +2,17 @@
 # Grafos
 Escreva um ou dois parágrafos resumindo o objetivo do seu projeto.
 
+# Trabalho: Grafos
+
 ## Nota: 11,2
 
 ## Comentários
-Aderência às classes do diagrama: 2/2 pontos 
 
-Requisitos de grafos corretamente implementados: 3,7/12 pontos 
+ ### Aderência às classes do diagrama: 2/2 pontos 
+
+###  Requisitos de grafos corretamente implementados: 3,7/12 pontos 
 	- carregar/salvar 1/1
-	- ordem/tamanho e existe aresta  0,7/1: tamanho errado (conta aresta errado)
+	- ordem/tamanho e existe aresta  0,7/1: tamanho errado (conta 	aresta errado)
 	- arestas ponderadas 1/1
 	- grafo completo 0/1: não criou arestas
 	- subgrafo 1/2: não tirou arestas de vértices excluidos
@@ -17,12 +20,11 @@ Requisitos de grafos corretamente implementados: 3,7/12 pontos
 	- caminho vértices 0/2
 	- caminho euleriano 0/2
 
-Documentação de código: 4 pontos 
+### Documentação de código: 4 pontos 
 	- cuidado com 'override de' na documentação. Obriga a pessoa a ir na classe mãe para descobrir o que o método faz.
 
-Testes (quantidade e qualidade): 1,5/2 pontos 
+### Testes (quantidade e qualidade): 1,5/2 pontos 
 	- teste (muito) errado em GrafoCompleto
-
 ## Alunos integrantes da equipe
 
 * Fabrício Frade Sousa
